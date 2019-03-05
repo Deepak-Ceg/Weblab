@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Statistics </title>
+		<meta charset="UTF-8">
+		<meta name = "Viewport" content = "width=device-width, intial-scale =1.0">
+		</head>
+	<body>
+	<h1 align ="center"> Statistics! </h1> 
+	<script type = "text/javascript">
+	var a=0;
+	var b=0;
+	var c=0;
+	function count()
+	{
+			a++;
+	}
+	function count1()
+	{
+			b++;
+	}
+	
+	function count2()
+	{
+		c++;
+	}
+	
+	function submit()
+	{
+				var output = "You have Clicked Regular Coffe " + a.toString()+ " times";
+		output += "\n" + " You have Cicked  Decaf " + b.toString()+ " times";
+		output += "\n" + " You have Clicked Mocha " + c.toString()+ " times";
+		window.confirm(output);
+	
+	
+	}
+	function a1()
+	{
+		var output = "You have Clicked Regular Coffe " + a.toString()+ " times";
+		window.confirm(output);
+	
+	
+	}
+	function b1()
+	{
+				var output = " You have Clicked  Decaf " + b.toString()+ " times";
+		
+		window.confirm(output);
+	
+	
+	}
+	function c1()
+	{
+				var output =" You have Clicked Mocha " + c.toString()+ " times";
+		window.confirm(output);
+	
+	
+	}
+	</script>
+	
+	Regular Coffee <br>
+	</br>
+	<img onclick ="count()" src="img1.jfif" >
+	<button onclick = "count()"> + </button>
+	</br>
+	</br>
+	Decaf <br>
+	</br>
+	<img src="img2.jfif" >
+	<button onclick = "count1()"> + </button>
+	</br>
+	</br>
+	Mocha  <br>
+	</br>
+	</br>
+	<img src="mocha.jfif" >
+	<button onclick = "count2()"> + </button>
+	</br>
+	</br>
+	<button onclick = "a1()"> Regular Coffee Statistics </button>
+	</br>
+	</br>
+	<button onclick = "b1()"> Decaf Statistics </button>
+	</br>
+	</br>
+	<button onclick = "c1()"> Mocha Statistics </button>
+	</br>
+	</br>
+	<button onclick = "submit()"> Overall Statistics </button>
+	</br>
+	</br>
+<p id = "paragraph"></p>
+	</body>
+	</html>
+	
+	

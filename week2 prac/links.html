@@ -1,0 +1,41 @@
+<html>
+<body>
+
+<a href = "https://www.google.com" id = "a" name="Google"> </a>
+<a href = "https://www.facebook.com" id = "b" name = "Facebook" > </a>
+<a href = "https://www.instagram.com" id ="c" name = "Instagram" > </a>
+<button onclick = "showlinks()">Submit</button>
+<table id = "tab">
+</table>
+	<script>
+	
+var x = new Array();
+		
+	function showlinks(){
+	
+		var txt = "";
+		x = document.links;
+		for(var i=0; i<x.length; i++){
+		
+			txt += "<tr>";
+			txt += "<td>";
+			txt += x[i].id + " ";
+			txt += "</td>"
+			txt += "<td>"
+			txt += x[i].href + " ";
+			txt += "</td>"
+			txt += "</tr>"
+		}
+		
+		var i = document.getElementById("tab");
+		tab.innerHTML +=txt;
+		
+		}
+		
+		</script>
+		
+	
+		
+	
+</body>
+</html>

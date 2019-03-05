@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Login Page </title>
+		<meta charset="UTF-8">
+		<meta name = "Viewport" content = "width=device-width, intial-scale =1.0">
+		</head>
+	<body>
+	<h1 align ="center"> Welcome to Login</h1> 
+	<script type = "text/javascript">
+	function submit()
+	{
+		var v1 = document.getElementById("input2").value;
+		var v2 = document.getElementById("input3").value;
+		if(v1 == v2)
+			document.getElementById("paragraph").innerHTML = "<b>Successfully Logged in!  </b>";
+		else
+				document.getElementById("paragraph").innerHTML = "<b>Incorrect Password!</b>" ;
+	}
+	
+	</script>
+	
+	Username : <input type = "text" id = "input1"> <br>
+	</br>
+	Password : <input type ="password" id= "input2"> <br>
+	</br>
+	Retype Password : <input type ="password" id= "input3"> <br>
+	</br>
+	<button onclick = "submit()"> Submit </button>
+	
+<p id = "paragraph"></p>
+	</body>
+	</html>
+	
+	

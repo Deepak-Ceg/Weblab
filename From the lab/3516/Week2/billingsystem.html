@@ -1,0 +1,49 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title> Welcome To BIlling System!</title>
+		<meta charset = "UTF-8">
+		<meta "viewport" content = "width=device-width, intital-scale =1.0">
+		
+	</head>
+	
+	<body>
+	<script type = "text/javascript">
+	 
+		var regular = parseInt(prompt(" Cups of Regular Coffee"));
+		var decaf = parseInt(prompt(" Cups of Decaf"));
+		var mocha = parseInt(prompt(" Cups of Mocha"));
+		var price = (regular*9) + (decaf*8) + (mocha*11);
+		
+		if(price > 100)
+			price = price -15;
+		var output = "You have Purchased " + regular.toString()+ " of regular, totalling to " + (regular*9).toString()+" dollars";
+		output += "\n" + " You have Purchased " + decaf.toString()+ " of decaf, totalling to " + (decaf*8).toString()+" dollars";
+		output += "\n" + " You have Purchased " + mocha.toString()+ " of mocha, totalling to " + (mocha*11).toString()+" dollars";
+		output += "\n" + " Your Total Purchase is " + price.toString() +" dollars";
+		window.confirm(output);
+		
+		var dis = price*20/100;
+		var response = prompt(" Save Aardvark Foundation and get 20% in you will get " + dis.toString() + " dollars");
+		if(response == "yes")
+		{
+			
+			output = " You have Purchased " + regular.toString()+ " of regular, totalling to " + (regular*9).toString()+" dollars";
+			output += "\n" + " You have Purchased " + decaf.toString()+ " of decaf, totalling to " + (decaf*9).toString()+" dollars";
+			output += "\n" + " You have Purchased " + mocha.toString()+ " of mocha, totalling to " + (mocha*11).toString()+" dollars";
+			price = price+50;
+			output += "\n" + " Member Fee added is 50 and total "+ price.toString() +" dollars";
+			price = price - dis;
+			output += "\n" + " Your Total Purchase is" + price.toString() +" dollars";
+			alert(output);
+			alert(" Thank You Visit Again! ");
+		}
+		
+		else {
+			alert (" Thank You Visit Again! ");
+			
+		}
+		
+		</script>
+		</body>
+		</html>

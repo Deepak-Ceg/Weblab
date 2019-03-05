@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:element name="students">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name ='student' type ='StudentType' minOccurs = '1' maxOccurs='unbounded'>
+                    
+                </xs:element>
+                
+            </xs:sequence>
+            
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="StudentType">
+        
+        <xs:sequence>
+            
+            <xs:element name = "name" type = "xs:string"></xs:element>
+            <xs:element name = "age" >
+                <xs:simpleType>
+                    <xs:restriction base = "xs:integer">
+                        <xs:minInclusive value="18"></xs:minInclusive>
+                        <xs:maxInclusive value="30"></xs:maxInclusive>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name = "major" >
+                <xs:complexType>
+                    <xs:choice>
+                        <xs:element name = "ComputerScience" >
+                            <xs:complexType >
+                    
+                                <xs:sequence>
+                       
+                                    <xs:element name="result"  minOccurs = '1' maxOccurs='10'>
+                                        <xs:complexType>
+                                            <xs:attribute name="course" >
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:enumeration value="PDS"></xs:enumeration>
+                                                        <xs:enumeration value="Embedded Systems"></xs:enumeration>
+                                                        <xs:enumeration value="OOPS"></xs:enumeration>
+                                                        <xs:enumeration value="CA"></xs:enumeration>
+                                                        <xs:enumeration value="OS"></xs:enumeration>
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:attribute>
+                                            <xs:attribute name="grade">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:enumeration value="O"></xs:enumeration>
+                                                        <xs:enumeration value="A+"></xs:enumeration>
+                                                        <xs:enumeration value="A"></xs:enumeration>
+                                                        <xs:enumeration value="B+"></xs:enumeration>
+                                                        <xs:enumeration value="B"></xs:enumeration>
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:attribute>
+                                            <xs:attribute name="date"  type="xs:date"  use="optional" />
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element> 
+                        <xs:element name = "InformationTechnology" >
+                            <xs:complexType>
+                    
+                                <xs:sequence>
+                       
+                                    <xs:element name="result"  minOccurs = '1' maxOccurs='10'>
+                                        <xs:complexType>
+                                            <xs:attribute name="course" >
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:enumeration value="DPD"></xs:enumeration>
+                                                        <xs:enumeration value="UNIX"></xs:enumeration>
+                                                        <xs:enumeration value="Image Processing"></xs:enumeration>
+                                                        <xs:enumeration value="TCP/IP design"></xs:enumeration>
+                                                        <xs:enumeration value="Mobile Application"></xs:enumeration>
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:attribute>
+                                            <xs:attribute name="grade">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:enumeration value="O"></xs:enumeration>
+                                                        <xs:enumeration value="A+"></xs:enumeration>
+                                                        <xs:enumeration value="A"></xs:enumeration>
+                                                        <xs:enumeration value="B+"></xs:enumeration>
+                                                        <xs:enumeration value="B"></xs:enumeration>
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:attribute>
+                                            <xs:attribute name="date"  type="xs:date"  use="optional" />
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+
+                        </xs:element>  
+                    </xs:choice>
+                </xs:complexType>    
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name= "id" type="xs:positiveInteger"></xs:attribute>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,39 @@
+<html>
+	<body style="background-color:#D2691E;">
+		<img onmouseover="check(0)" onmouseout="normal()" src="img1.jfif" alt="img1">
+
+	<img onmouseover="check(1)" onmouseout="normal()" src="img2.jfif" alt="img2">
+	
+	<img onmouseover="check(2)" onmouseout="normal()" src="mocha.jfif" alt="img3">
+	<h1> Types of Coffee</h1>
+	
+	<script>
+		window.onload = function(){
+			b2();
+		}
+		function check(id){
+			 var imgs =  document.getElementsByTagName("img");
+			for(var x=0;x<imgs.length;x++)
+			{
+				if(x != id)
+				imgs[x].style.opacity = "0.4";
+				else
+					{
+						imgs[x].style.height = "50%";
+						imgs[x].style.width = "50%";
+					}
+					
+			}
+		}
+		function normal(){
+			 var imgs =  document.getElementsByTagName("img");
+			for(var x=0;x<imgs.length;x++)
+			{
+				imgs[x].style.opacity = "1";
+				imgs[x].style.height = "10%";
+				imgs[x].style.width = "10%";
+			}
+		}
+	</script>
+	</body>
+</html>

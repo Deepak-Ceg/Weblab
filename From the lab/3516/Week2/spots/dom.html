@@ -1,0 +1,37 @@
+<html>
+<body>
+<a href="https://google.com" id="c" name ="Google" ></a>
+<a href="https://www.facebook.com/" id="c" name ="Facebook" ></a>
+<a href="https://www.instagram.com/accounts/login/?hl=en" id ="d" name="Instagram"></a>
+<button onclick="showme()"> Show me the links</button>
+<table id="tab">
+</table>
+	<script>
+		var x = new Array();
+
+		function showme(){
+		
+			console.log("hello");
+			var txt = "";
+			x = document.links;
+			for(var i=0;i<x.length;i++)
+			{
+				txt += "<tr>";
+				txt += "<td>";
+				txt += x[i].id + " ";
+				txt += "</td>";
+				txt += "<td>";
+				txt += x[i].href;
+				txt += "</td>";
+				txt += "</tr>";
+			}
+			var tab = document.getElementById("tab");
+			tab.innerHTML += txt;
+		}
+		
+	</script>
+	
+
+	
+</body>
+</html>

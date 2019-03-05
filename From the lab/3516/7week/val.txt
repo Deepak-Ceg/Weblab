@@ -1,0 +1,137 @@
+<html>
+
+<head>
+<title>Formum PHPyum</title>
+</head>
+
+<style>
+
+body {
+		background-color:#8888DD;
+		background-opactity: 0.5;
+}
+
+.Form {
+		z-index : 5;
+		box-shadow: 10px 10px #AAAAFF;
+		background-color: white;
+		width: 50%;
+		padding : 2%;
+		margin-top: 15%;
+}
+
+.Form input {
+	
+	width : 100%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+.Form select {
+	 
+	width : 100%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+</style>
+<body>
+<?php
+
+function luhn($cdno){
+
+	$le = strlen($cdno);
+	$c = 0;
+	$eve =  true;
+	$val = 0;
+	for($i=0;$i<$len;$i++)
+	{
+		if($cdno[$i] != '-')
+		{
+			if($eve)
+			{
+				if(c*2
+		}
+
+}
+
+function valid($cdno,$cdty){
+	//echo $cdno;
+	$n = preg_match("/^\d{16,16}$/",$cdno);
+	$m = preg_match("/^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$/",$cdno);
+	//echo $n;
+	//echo $m;
+	if($n == 0 && $m == 0)
+		return false;
+	$n = preg_match("/^4/",$cdno);
+	if($n>0 && strcmp($cdty,"MasterCard")==0)
+		return false;
+	$n = preg_match("/^5/",$cdno);
+	if($n>0 && strcmp($cdty,"Visa") == 0)
+		return false;
+	return true;
+}
+
+$errorrr = true;
+	$name = "dummy";
+	$section = "dummy";
+	$cardtype = "dummy";
+	$creditno = 0; 
+$mess = "Muzhusaaa fill pannunga ejamaan";
+if($_SERVER["REQUEST_METHOD"]=="POST")
+{
+	if(isset($_POST["name"]) && isset($_POST["section"]) && isset($_POST["cardtype"]) && isset($_POST["creditno"]))
+	{
+		$name = $_POST["name"];
+		$section = $_POST["section"];
+		$cardtype = $_POST["cardtype"];
+		$creditno = $_POST["creditno"];
+		if($name != "" && $section != "" && $cardtype != "" && $creditno != "")
+		{
+			if(valid($creditno,$cardtype))
+			{
+				$errorrr = false;
+				$file = fopen("virundhaaligal.txt","a");
+				fwrite($file,"\n".$name.";".$section.";".$cardtype.";".$creditno.";");
+				fclose($file);
+			}
+			else
+			{
+				$mess = "credit card number vivarangal thavaru";
+			}
+		}
+		
+	}	
+}
+?>
+<center>
+<div class="Form">
+<center><p><?php if($errorrr)echo "Thavaru seidhu vitteergal";
+else
+	echo "Neenga Enna Sonninganaa";
+?>
+</p></center>
+<br>
+<?php
+if($errorrr)
+	echo "<p>".$mess."</p>";
+else
+{
+echo "<p>Name: ".$name."</p><br>";
+echo "<p>Section: ".$section."</p><br>";
+echo "<p>Credit-card: ".$creditno."(".$cardtype.")</p><br>";
+echo "<pre>";
+	$file = fopen("virundhaaligal.txt","r");
+	$fsize = filesize("virundhaaligal.txt");
+	$txt = fread($file,$fsize);
+	fclose($file);
+	echo nl2br($txt);
+	echo "</pre>";
+}
+?>
+</div>
+</center>
+
+</body>
+
+</html>

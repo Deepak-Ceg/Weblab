@@ -1,0 +1,51 @@
+<students>
+  <student id="100026">
+    <name>Joe Average</name>
+    <age>21</age>
+    <major>Computer Science</major>
+    <results>
+      <result course="Math 101" grade="C-"/>
+      <result course="Biology 101" grade="C+"/>
+      <result course="Statistics 101" grade="D"/>
+    </results>
+  </student>
+  <student id="100078">
+    <name>Jack Doe</name>
+    <age>18</age>
+    <major>Physics</major>
+    <major>XML Science</major>
+    <results>
+      <result course="Math 101" grade="A"/>
+      <result course="XML 101" grade="A-"/>
+      <result course="Physics 101" grade="B+"/>
+      <result course="XML 102" grade="A"/>
+    </results>
+  </student>
+</students>
+
+The above XML is a sample xml contains a student's results for various subjects/
+
+Create XML Schema for the above XML.
+Add more definitions to XML schema to model mark sheet completely.
+
+Provide more samples with variations, sample variation are given below
+1. Student age has to be between 18 and 30
+2. The value of major is limited to Computer Science and Information Technology
+3. Grade should have valid value
+4. Examination date can be added
+5. Course can vary based on chosen major
+
+
+
+create XSD for this XML and validate XML.
+
+1)
+
+<xs:element name="age">
+  <xs:simpleType>
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="18"/>
+      <xs:maxInclusive value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>

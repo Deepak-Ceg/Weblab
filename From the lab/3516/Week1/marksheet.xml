@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<students>
+    <student id="100026">
+        <name>Joe Average</name>
+        <age>21</age>
+        <major>
+            <ComputerScience>
+                <result course="CA" grade="B"/>
+                <result course="PDS" grade="B"/>
+                <result course="Embedded Systems" grade="B"/>
+            </ComputerScience>
+        </major>
+    </student>
+    <student id="100078">
+        <name>Jack Doe</name>
+        <age>18</age>
+        <major>
+            <InformationTechnology>
+    
+   
+                <result course="UNIX" grade="A" date="2018-12-31"/>
+                <result course="Mobile Application" grade="A"/>
+                <result course="DPD" grade="B+"/>
+                <result course="TCP/IP design" grade="A"/>
+            </InformationTechnology>
+        </major>
+    </student>
+</students>
